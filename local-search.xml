@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>Experience as a Data Engineer</title>
+    <link href="/2022/07/21/Experience-data_engineer/"/>
+    <url>/2022/07/21/Experience-data_engineer/</url>
+    
+    <content type="html"><![CDATA[<h2 id="工作内容"><a href="#工作内容" class="headerlink" title="工作内容"></a>工作内容</h2><p>技术栈：代码主要是写sql，涉及少量的java，python。excel也比较常用。（大数据的技术栈多是多，但对于离线数仓的建模来说基本是会sql就行？当然对一些组件有了解，理解一下底层原理对调优啥的也会有帮助，但感觉重点还是基于对业务的理解清理数据和搭建模型？</p><h3 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h3><p>职责：清理整合各种业务系统的数据，根据业务含义设计整合成新的表，以便于数据分析。</p><p>整合数据：<br>保障数据一致性和准确性：<br>保障数据产出：可能会因为资源问题，上游业务变更，代码bug，甚至框架bug之类的问题导致数据没能产出或延迟，都需要数开解决，通常是夜间。<br>提供咨询服务：作为连接系统业务和数据分析的桥梁，经常需要解答一些问题，比如某个场景下最合适的表和字段，不同表之间的差异，某些表的使用方法，甚至一些sql的优化等。</p><h3 id="资产治理"><a href="#资产治理" class="headerlink" title="资产治理"></a>资产治理</h3><h2 id="工作体验"><a href="#工作体验" class="headerlink" title="工作体验"></a>工作体验</h2><h2 id="经验总结"><a href="#经验总结" class="headerlink" title="经验总结"></a>经验总结</h2><h3 id="通用经验"><a href="#通用经验" class="headerlink" title="通用经验"></a>通用经验</h3><h3 id="SQL优化"><a href="#SQL优化" class="headerlink" title="SQL优化"></a>SQL优化</h3><h4 id="数据检查"><a href="#数据检查" class="headerlink" title="数据检查"></a>数据检查</h4>            <input type="checkbox" disabled checked="checked">分布          ：空值占比？各个码值占比？数据倾斜？            <input type="checkbox" disabled checked="checked">主键唯一          ：“主键”是唯一的吗            <input type="checkbox" disabled checked="checked">关联关系          ：一对一？一对多？多对多？            <input type="checkbox" disabled checked="checked">默认值          ：空值怎么处理？默认值是什么？<h4 id="优化思路"><a href="#优化思路" class="headerlink" title="优化思路"></a>优化思路</h4><p>业务逻辑优化&gt;SQL优化&gt;&#x3D;资源优化</p><h3 id="搬砖小技巧"><a href="#搬砖小技巧" class="headerlink" title="搬砖小技巧"></a>搬砖小技巧</h3><ul><li>Excel 好用！</li><li>记录常用的queries，然后快乐copy&#x2F;paste~</li></ul><h2 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>Experience</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Big Data</tag>
+      
+      <tag>Work</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="/2022/04/05/hello-world/"/>
     <url>/2022/04/05/hello-world/</url>
