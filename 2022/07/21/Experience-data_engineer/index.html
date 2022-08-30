@@ -24,7 +24,7 @@
 <meta property="og:description" content="Greate experience at MUCFC">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-07-21T07:00:01.000Z">
-<meta property="article:modified_time" content="2022-07-29T04:30:05.757Z">
+<meta property="article:modified_time" content="2022-08-30T22:37:42.343Z">
 <meta property="article:author" content="Tingyin">
 <meta property="article:tag" content="Big Data">
 <meta property="article:tag" content="Work">
@@ -198,7 +198,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      4.5k 字
+      12k 字
     </span>
   
 
@@ -207,7 +207,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      38 分钟
+      101 分钟
     </span>
   
 
@@ -239,43 +239,39 @@
             <h1 style="display: none">Experience as a Data Engineer</h1>
             
             <div class="markdown-body">
-              <h2 id="Work-Content"><a href="#Work-Content" class="headerlink" title="Work Content"></a>Work Content</h2><h3 id="Data-Warehouse-Modeling"><a href="#Data-Warehouse-Modeling" class="headerlink" title="Data Warehouse Modeling"></a>Data Warehouse Modeling</h3><p>“Data warehouse engineers are essentially managers providing support to the data warehouse. They troubleshoot current procedures, strive to improve data organization, fix performance issues, translate data analysis into good data design, and collaborate with other data workers.”</p>
-<p>清理整合各种业务系统的数据，根据业务含义设计整合成新的表，以便于数据分析。我主要负责的是贷款交易相关的。</p>
+              <h2 id="Work-content"><a href="#Work-content" class="headerlink" title="Work content"></a>Work content</h2><h3 id="Data-warehouse-model"><a href="#Data-warehouse-model" class="headerlink" title="Data warehouse model"></a>Data warehouse model</h3><p>Clean up and integrate data from various business systems and design and integrate them into new tables based on business implications to facilitate data analysis. I am mainly responsible for the loan transaction related ones.</p>
 <ul>
-<li><p><strong>整合数据</strong>：Integrate data from different sources. Store SQL procedures to run automatically. 需要确认业务逻辑和考虑业务需求。主要是和产品以及贷款系统交易系统的同事对接，了解新业务的逻辑，了解系统更新所涉及的数据方面的更新情况，比如码值变更、关联关系变更等。<br>业务变更：需要跨部门和业务系统保持联系。仔细询问变更内容和评估对数仓的影响。如果有影响，需要判断数仓需要做什么变更或者数据分析需要更改什么口径（新业务场景）。</p>
+<li><p><strong>Integrate data</strong>: Integrate data from different sources. Store SQL procedures to run automatically. Need to confirm business logic and consider business requirements. Mainly interfacing with product and loan system transaction system colleagues to understand the logic of the new business and understand the updates in terms of data involved in system updates, such as code value changes, correlation relationship changes, etc.<br>Business changes: need to keep in touch with business systems across departments. Carefully ask about the content of the changes and assess the impact on the number of warehouses. If there is an impact, you need to determine what changes need to be made to the data warehouse or what caliber needs to be changed for data analysis (new business scenarios).</p>
 </li>
-<li><p><strong>保障数据一致性和准确性</strong>：在系统中可能有一些bug导致的数据，可以在数仓兜底修复数据。需要设计一些校验，基础的比如主键、码值的校验，针对交易场景还有一些金额的校验，比如放还款和净增的强校验，一些限制条件的弱校验，比如状态和金额不匹配之类的。只涉及单个ODS表的字段的校验其实应该往下放。</p>
+<li><p><strong>Guarantee data consistency and accuracy</strong>: there may be some bugs in the system resulting in data that can be repaired in the data warehouse underwriting data. Need to design some checks, basic such as the primary key, code value checks, for the transaction scenario there are some amount of checks, such as the strong checks for the release of repayment and net increase, some restrictions of the weak checks, such as the state and the amount of mismatch and so on. In fact, the verification of fields involving only a single ODS table should be decentralized.</p>
 <ol>
-<li>设置校验</li>
-<li>重刷数据、做好记录</li>
+<li>set the checksum</li>
+<li>re-flush data and keep good records</li>
 </ol>
 </li>
-<li><p><strong>保障数据产出</strong>：可能会因为资源问题，上游业务变更，代码bug，甚至框架bug之类的问题导致数据没能产出或延迟，都需要数开解决，通常是凌晨跑前一天的数据，所以问题一般也都需要凌晨及时告警和解决。我一般是凌晨三四点接到电话。刚开始频率比较高，感觉每周至少一次（正值刚接手+业务变更+资源问题）；近离职的几个月大概每月2~3次。真正需要处理的问题的频率可能是三分之一？</p>
+<li><p><strong>Safeguard data output</strong>: may be due to resource problems, upstream business changes, code bugs, and even framework bugs and other problems that lead to data not output or delay, you need to count on the solution, usually the data of the day before the morning run, so the problem generally need to be alerted and resolved in the morning. I usually get a call at three or four in the morning. At first the frequency is relatively high, feel at least once a week (just took over + business changes + resource issues); near the departure of a few months about 2~3 times a month. The frequency of the problems that really need to be dealt with may be one-third?</p>
 <ol>
-<li>资源问题：随着公司发展，数据量越来越多，或者某个业务场景下数据激增，之前配置的资源可能就跑不过了。可能可以通过预测数据量和资源使用率来动态调整配置资源？不过这样的话，还会涉及平台资源调度。</li>
-<li>代码问题：贷款维护基本都是我自己开发+测试的。主要是代码要规范，流程要规范。</li>
-<li>业务变更&#x2F;Bug：一些强校验会fail，需要及时定位处理。</li>
-<li>平台&#x2F;框架bug：出现一次就尽量想办法修复或者避免，但比较难以避免。</li>
+<li>resource problems: as the company grows, the amount of data is increasing, or a business scenario data surge, the previously configured resources may not be able to run. It may be possible to dynamically adjust the allocation of resources by predicting data volume and resource utilization? But in that case, it will also involve platform resource scheduling.</li>
+<li>code problems: loan maintenance is basically my own development + testing. The main thing is that the code should be standardized and the process should be standardized.</li>
+<li>business changes &#x2F; bugs: some strong checks will fail, the need to timely positioning processing.</li>
+<li>platform&#x2F;framework bugs: appear once and try to find ways to fix or avoid, but it is more difficult to avoid.</li>
 </ol>
 </li>
-<li><p><strong>提供咨询</strong>：作为连接系统业务和数据分析的桥梁，数仓负责人经常需要解答一些问题，比如某个场景下最合适的表和字段，不同表之间的差异，某些表的使用方法，甚至一些sql的优化等。为了减少做应答机器人的次数，</p>
+<li><p><strong>Provide consultation</strong>: As a bridge connecting system business and data analysis, the person in charge of the data warehouse often needs to answer some questions, such as the most appropriate table and fields in a certain scenario, the differences between different tables, the use of certain tables, and even some sql optimization. In order to reduce the number of times to do answering bots</p>
 <ol>
-<li>在数据地图上备注：查找点进某张表后，可以看到这张表的备注和一些字段的备注。（只适用于对数仓熟悉、知道使用哪张表、并且问题只涉及这张表和字段的情况）</li>
-<li>组织培训：编写PPT，定了会议时间并录制了，之后分享了相关资料和录像。（效果取决于课件准备的质量，主要适用于讲解数仓的基础知识和架构。）</li>
-<li>编写在线文档：补充1和2，在文档里添加基础知识的资料和链接，加上涉及多个表的差异比较，以及其他一些涉及多张表或者口径变更之类的问题。</li>
+<li>Remarks on the data map: After looking up a point into a certain table, you can see the remarks of this table and the remarks of some fields. (Only for cases where you are familiar with the data warehouse, know which table to use, and the question involves only this table and fields)</li>
+<li>organize training: prepared PPT, scheduled and recorded the meeting, and then shared relevant information and videos. (The effect depends on the quality of the courseware preparation and is mainly applicable to explain the basics and architecture of the number warehouse.)</li>
+<li>prepare online documentation: supplement 1 and 2, add information and links to the basics in the documentation, plus comparison of differences involving multiple tables, and some other issues involving multiple tables or caliber changes and so on.</li>
 </ol>
 </li>
 </ul>
-<h3 id="Data-Warehouse-Governance"><a href="#Data-Warehouse-Governance" class="headerlink" title="Data Warehouse Governance"></a>Data Warehouse Governance</h3><p>类似于重构吧。因为数仓在建立后，随着数仓的发展，总会有一些更好的方案。在初期也可能在开发效率和规范中偏向效率，而有一些不太规范的情况。在基本稳定之后，更规范可能效率更高，可用性更好，所以治理是必要的。</p>
+<h3 id="Counting-Warehouse-Asset-Governance"><a href="#Counting-Warehouse-Asset-Governance" class="headerlink" title="Counting Warehouse Asset Governance"></a>Counting Warehouse Asset Governance</h3><p>Similar to refactoring, I guess. Because there will always be some better solution as the number warehouse evolves after it is created. In the initial stage there may also be some less standardized situations where efficiency and standardization are favored in development efficiency. After basic stability, more specification may be more efficient and better usability, so governance is necessary.</p>
 <ol>
-<li>设计一系列资产质量的指标，用以评估现有资产的质量和量化治理的效果。</li>
-<li>根据定义的指标，梳理现存的需要改进的明细。</li>
-<li>分配任务然后治理。</li>
+<li>Design a series of asset quality metrics to assess the quality of existing assets and quantify the effectiveness of governance.</li>
+<li>Based on the defined metrics, sort out the details of the existing ones that need improvement.</li>
+<li>assign tasks and then govern.</li>
 </ol>
-<p class="note note-secondary">
-指标基本是参考别的公司的方案。主要问题是改起来很麻烦，大部分需要改的表都有很多下游了，牵扯比较广。然后因为改完不会有特别明显的提升，还可能出现问题。然后还有一些是数仓设计上的问题，就是虽然有“理论上”的数仓，但实际操作总有些实际的问题而难以达到。比如之前的一些表的分层可能就有问题，如果要改下游依赖也都要改。比如从dws汇总的dws，这种dws是不是也应该区分。
-</p>
-
+<p>Basically, the indicators are based on other companies’ solutions. The main problem is that it is very troublesome to change, and most of the tables need to be changed have a lot of downstream, which is more extensive. And then because the change will not have a particularly obvious upgrade, but also may have problems. Then there are also some problems with the design of the number of bins, that is, although there is a “theoretical” number of bins, but the actual operation always has some practical problems and difficult to achieve. For example, there may be problems with some of the previous table hierarchies, and if you want to change the downstream dependencies, you have to change them. For example, should we also differentiate between dws that are aggregated from dws?</p>
 <h3 id="Skills"><a href="#Skills" class="headerlink" title="Skills"></a>Skills</h3><ul>
 <li><p>Domain Knowledge &gt;&#x3D; Communication Skills &gt; Techniqal Skills</p>
 </li>
@@ -293,115 +289,111 @@
 </ul>
 </li>
 </ul>
-<h2 id="工作体验"><a href="#工作体验" class="headerlink" title="工作体验"></a>工作体验</h2><p>了解到了工作是是怎么</p>
-<p>总体来说，我觉得今年比去年更“好”了。信息同步机制更完善了，OA中加上了cc数仓的流程，并且贷款同事会主动告诉我更新内容并询问影响了。校验也加了不少，借据层和客户层的平衡校验以及。夜间巡检频率也降低了。对于数据的使用者来说，文档和注释也更多了，应该更好上手了。</p>
-<p>刚开始不熟悉各种表和工作流程比较痛苦，取数感觉天天迷失在数据的海洋里，遇到一些问题也不太清楚怎么处理。熟悉之后取数很顺手，就算有问题的也大概知道怎么解决，感觉工作反而变得更简单了。同时感觉工作的自由度还是挺高的，发现的问题都可以尝试解决，同事都也都很乐于助人（感恩</p>
-<p>刚做起来就放弃也挺遗憾的，我觉得还有很多内容没有尝试过，并且对工作的感觉比起去年更好了，工作好像也越来越有趣了。可能是太慢热了吧，今年年初的时候还觉得没啥意思。或许之后可以多问问别人觉得工作有意思的点！</p>
-<h3 id="快乐"><a href="#快乐" class="headerlink" title="快乐"></a>快乐</h3><ul>
-<li>开发设计也比较有趣而且不难也不算复杂，sql简单产出快，即时反馈很爽。</li>
-<li>回答别人的问题，讲解怎么使用建立的模型感觉非常快乐。感觉工作的成果能帮到大家。</li>
-<li>面向公司内部，压力比较小；同时几乎全公司都会查询使用贷款的数据，visibility比较高。</li>
-<li>定位数据问题会有解密的快乐。</li>
+<h2 id="Work-Experience"><a href="#Work-Experience" class="headerlink" title="Work Experience"></a>Work Experience</h2><p>Learned what the job is all about. The company pays</p>
+<p>In general, I think this year is “better” than last year. The information synchronization mechanism is much better, the process of cc number warehouse is added in OA, and loan colleagues will actively tell me the updated content and ask about the impact. Calibration also added a lot, the balance of the debit layer and customer layer calibration as well. The frequency of nightly inspections has also been reduced. There is also more documentation and comments for users of the data, which should be better for getting started.</p>
+<p>At first, I was not familiar with the various tables and workflows, and I felt lost in a sea of data every day, and I was not quite sure how to deal with some problems I encountered. After getting familiar with the data, it was very smooth, and even if there were problems, I probably knew how to solve them, so I felt that the work became simpler. At the same time, I feel that the freedom of work is still quite high, and I can try to solve all the problems I found, and my colleagues are all very good and helpful (thanks).</p>
+<p>I think there are still a lot of things I haven’t tried, and I feel better about my work than last year, and my work seems to be more and more interesting. Maybe it’s because I’m too slow to get started, but at the beginning of this year I didn’t think it was interesting. Maybe after that I can ask more people what they find interesting about their work!</p>
+<h3 id="Happy"><a href="#Happy" class="headerlink" title="Happy"></a>Happy</h3><ul>
+<li>The development design is also more interesting and not difficult or complicated, sql simple output convenient, instant feedback is very cool.</li>
+<li>Answering other people’s questions and explaining how to use the model built feels very happy. I feel that the results of my work can help everyone.</li>
+<li>Internal-oriented, less pressure; at the same time almost the whole company will query the use of loan data, visibility is relatively high.</li>
+<li>Locating data problems will have the joy of deciphering, and most cases tracking data can always find the problem.</li>
 </ul>
-<h3 id="一般"><a href="#一般" class="headerlink" title="一般"></a>一般</h3><ul>
-<li>感觉主要还是了解业务逻辑和业务诉求，不然会很迷茫。上手有些困难，不了解的东西有些多，有些“知道但不理解”的感觉。</li>
-<li>每个改动都需要非常仔细地评估，事后再改动通常会比较困难&#x2F;麻烦。</li>
-<li>咨询有时会打断思路，花费的时间有时比较多；有些数据问题查起来麻烦。</li>
+<h3 id="General"><a href="#General" class="headerlink" title="General"></a>General</h3><ul>
+<li>Feels like the main thing is to understand the business logic and business requirements, otherwise it will be very confusing. It’s difficult to get started, and there are a lot of things I don’t understand, so I feel like I know but don’t understand.</li>
+<li>Each change needs to be evaluated very carefully, and it is usually difficult&#x2F;problematic to make changes afterwards.</li>
+<li>Consulting sometimes interrupts thinking, and consulting more often takes more time and is not counted in the workload.</li>
 </ul>
-<h3 id="讨厌"><a href="#讨厌" class="headerlink" title="讨厌"></a>讨厌</h3><ul>
-<li>半夜运维：看起来没有办法完全避免，并且近几个月感觉是团队里被告警次数较少的了。<ul>
-<li>不过巡检机制可以优化，至少因为上游延迟而延迟应该是可以解决的</li>
-<li>但是真的要处理的这些问题可能是表负责人才能快且好的解决的？rotation可能也不太靠谱（针对目前的情况）</li>
-</ul>
-</li>
-<li>历史存在的数据问题颇多，也时常有几条数据有问题。感觉疲于刷数。</li>
-<li>治理牵扯多，改起来麻烦，然后因为优先级低，不好推动，并且进展缓慢。</li>
-<li>运行很慢：<ul>
-<li>一是数据平台跑数真的卡，1s跑完1s获取结果1s展示…不过被允许使用command line之后快乐多了。</li>
-<li>二是资源不足，太多人用没有扩容，经常出现资源爆满跑不了数的情况。</li>
-<li>三是数据量大跑的就是慢，基本都分几段写了…</li>
+<h3 id="Bummer"><a href="#Bummer" class="headerlink" title="Bummer."></a>Bummer.</h3><ul>
+<li>Midnight Ops: There doesn’t seem to be a way to completely avoid it, and in recent months it feels like the team has been alerted less often. (Can I choose neither overtime at night nor overtime in the early morning?<ul>
+<li>But the patrol mechanism can be optimized, at least because of upstream delays and delays should be able to solve the</li>
+<li>But really have to deal with these problems may be the head of the table to fast and good solution?</li>
 </ul>
 </li>
+<li>There are quite a lot of historical data problems, and there are also several data problems from time to time. Feel tired of brushing up the numbers.</li>
+<li>Governance is involved a lot and it’s a pain to change, and then it’s not good to push because it’s low priority and it’s slow.</li>
+<li>Runs very slow and can be a bit anxious.<ul>
+<li>One is the data platform to run the number of really card, 1s run 1s get the results 1s show … But after being allowed to use the command line is much happier.</li>
+<li>Second, the lack of resources, too many people with no expansion, there are often resources bursting to run the number of cases.</li>
+<li>Third, the amount of data running is slow, basically write in several paragraphs, so that it is still necessary to build and promote the summary table.</li>
 </ul>
-<blockquote>
-<p>Well, I heard a lot of software engineer positions require on call… </p>
-</blockquote>
-<h2 id="经验总结"><a href="#经验总结" class="headerlink" title="经验总结"></a>经验总结</h2><h3 id="通用经验"><a href="#通用经验" class="headerlink" title="通用经验"></a>通用经验</h3><ul>
-<li><p>Think one step more确认最终问题 尽量避免xy问题 要做什么？为什么？怎么做？做完之后呢？避免重复的问题</p>
-</li>
-<li><p>产出成果 记录&amp;表述</p>
 </li>
 </ul>
-<p>人很容易失忆，自己都不记得之前做了什么，更别说让别人记得了！如果有必要的话需要主动提起！需要记录一下，事情+作用&#x2F;impact</p>
+<h2 id="Experience-Summary"><a href="#Experience-Summary" class="headerlink" title="Experience Summary"></a>Experience Summary</h2><h3 id="General-experience"><a href="#General-experience" class="headerlink" title="General experience"></a>General experience</h3><ul>
+<li><p>Think one step more to confirm the ultimate problem Try to avoid xy problem To do what? Why? How to do it? What happens after you do it? Avoid repetitive questions</p>
+</li>
+<li><p>Produce results Record &amp; Represent</p>
+</li>
+</ul>
+<p>People can easily lose their memory, they don’t remember what they did before, let alone make others remember! Need to take the initiative to mention it if necessary! Need to record it, things + role&#x2F;impact</p>
 <ul>
-<li><p>问题：</p>
+<li><p>Question.</p>
 <ul>
-<li>是不是问题？需不需要解决？紧急吗？</li>
-<li>能不能改变？怎么改？谁来改？</li>
+<li>Is it a problem? Do you need to solve it? Is it urgent?</li>
+<li>Can it be changed? How can it be changed? Who will change it?</li>
 </ul>
 </li>
-<li><p>推进：推动别人前要先自己搞明白流程</p>
+<li><p>Advancement: understand the process yourself before pushing others</p>
 </li>
-<li><p>会议：做好准备，明确目的，尽量快得发现疑惑的点并确定，如果能先找出问题会议上再讨论提出的解决方案就更好了。可能需要事先构想解决方案，大的方案好想，可能需要更关注字段含义等细节。（不过很细的问题也可以之后再问啦。那么还有就是摸清每个人都是什么作用，诉求都是什么。记录一下结论！</p>
+<li><p>Meeting: Be prepared, clear purpose, try to quickly find the point of doubt and determine, if you can first identify the problem meeting and then discuss the proposed solution would be better. You may need to conceive a solution in advance, the big idea is good, you may need to pay more attention to details such as the meaning of the fields. (But very detailed questions can also be asked later. Then there is the role of figuring out what each person is, what the claims are. Record a conclusion!</p>
 </li>
-<li><p>比起简洁 尽量努力把话讲清楚 </p>
+<li><p>More than concise Try to speak clearly </p>
 </li>
-<li><p>排序 工作优先级</p>
+<li><p>Sort Work Priority</p>
 </li>
 </ul>
-<h3 id="SQL经验"><a href="#SQL经验" class="headerlink" title="SQL经验"></a>SQL经验</h3><h4 id="数据检查"><a href="#数据检查" class="headerlink" title="数据检查"></a>数据检查</h4><ul>
-<li>主键唯一    ：“主键”是唯一的吗？如果根据“主键”汇总，其他非聚合项的取值是最大最小？求和？</li>
-<li>分布    ：空值占比？各个码值占比？数据倾斜？</li>
-<li>关联关系：一对一？一对多？多对多？如果不是一对一，是选择膨胀还是通过什么条件筛选整合呢？</li>
-<li>默认值    ：空值怎么处理？默认值是什么？</li>
-<li>每个字段的含义和逻辑: 是否有必要囊括？</li>
+<h3 id="SQL-experience"><a href="#SQL-experience" class="headerlink" title="SQL experience"></a>SQL experience</h3><h4 id="Data-checking"><a href="#Data-checking" class="headerlink" title="Data checking"></a>Data checking</h4><ul>
+<li>Primary key is unique: Is the “primary key” unique? If aggregated by “primary key”, are the values of other non-aggregated items the maximum and minimum? Summation?</li>
+<li>Distribution : What is the percentage of null values? What is the percentage of each code value? Data skew?</li>
+<li>Association: one-to-one? One-to-many? Many-to-many? If not one-to-one, is it a choice of inflation or integration by what condition filter?</li>
+<li>Defaults : What about null values? What is the default value?</li>
+<li>Meaning and logic of each field: Is it necessary to encapsulate?</li>
 </ul>
-<p>针对优化&#x2F;刷数：</p>
+<p>For optimization&#x2F;brush count.</p>
 <ul>
-<li>影响？</li>
+<li>Impact?</li>
 </ul>
-<h4 id="优化思路"><a href="#优化思路" class="headerlink" title="优化思路"></a>优化思路</h4><p>优化业务逻辑&gt;优化代码&gt;&#x3D;优化资源配置</p>
-<h5 id="优化业务逻辑"><a href="#优化业务逻辑" class="headerlink" title="优化业务逻辑"></a>优化业务逻辑</h5><ul>
-<li>筛选数据，减少不必要的数据和不必要的关联</li>
-<li>根据新的业务逻辑更新代码，比如不再依赖停止更新了的表</li>
+<h4 id="Optimization-ideas"><a href="#Optimization-ideas" class="headerlink" title="Optimization ideas"></a>Optimization ideas</h4><p>Optimize business logic &gt; Optimize code &gt;&#x3D; Optimize resource allocation</p>
+<h5 id="Optimize-business-logic"><a href="#Optimize-business-logic" class="headerlink" title="Optimize business logic"></a>Optimize business logic</h5><ul>
+<li>Filtering data to reduce unnecessary data and unnecessary associations</li>
+<li>Update code based on new business logic, e.g. no longer relying on tables that have stopped being updated</li>
 </ul>
-<h5 id="优化代码"><a href="#优化代码" class="headerlink" title="优化代码"></a>优化代码</h5><ul>
-<li>减少读表<ul>
-<li>限制分区</li>
-<li>减少读取大表的次数</li>
-<li>先过滤后关联</li>
-<li>分开处理 取默认值的数据 和 需要加工的数据</li>
-</ul>
-</li>
-<li>减少写表<ul>
-<li>临时表 vs 子查询</li>
+<h5 id="Optimize-code"><a href="#Optimize-code" class="headerlink" title="Optimize code"></a>Optimize code</h5><ul>
+<li>Reduce table reads<ul>
+<li>Limit partitioning</li>
+<li>Reduce the number of reads of large tables</li>
+<li>Filter first, then correlate</li>
+<li>Separate processing of data that takes default values and data that needs to be processed</li>
 </ul>
 </li>
-<li>避免数据倾斜<ul>
-<li>避免使用distinct，distinct只有一个reducer</li>
-<li>避免关联字段倾斜，比如空值，可以用rand()处理</li>
+<li>Reduce write tables<ul>
+<li>Temporary tables vs. subqueries</li>
+</ul>
+</li>
+<li>Avoid data skewing<ul>
+<li>Avoid using distinct, which has only one reducer</li>
+<li>Avoid skewing associated fields, such as null values, which can be handled with rand()</li>
 <li>distributed by rand()</li>
-<li>窗口函数排序</li>
+<li>Window function sorting</li>
 </ul>
 </li>
-<li>取第一行可用取最大值&#x2F;最小值代替</li>
+<li>take the first row can be replaced by taking the maximum&#x2F;minimum value</li>
 </ul>
-<h5 id="优化资源配置"><a href="#优化资源配置" class="headerlink" title="优化资源配置"></a>优化资源配置</h5><ul>
-<li><p>调整spark的各种配置：门道挺多，虽然我看了一些教程，但因为我一般按默认配置来也还行，就没有什么特别的实践经验。</p>
+<h5 id="Optimize-resource-allocation"><a href="#Optimize-resource-allocation" class="headerlink" title="Optimize resource allocation"></a>Optimize resource allocation</h5><ul>
+<li><p>Adjusting various configurations of spark: There are quite a lot of ways, although I have read some tutorials, but because I am generally okay with the default configuration, I don’t have any special practical experience.</p>
 </li>
-<li><p>改用impala运行： 因为凌晨公司impala的资源闲置，并且运算少的时候impala会快不少。不过我对impala的原理了解不是很多。</p>
+<li><p>change to impala run: because the early morning company impala resources idle, and computing less when impala will be much faster. But I do not know much about the principle of impala.</p>
 </li>
 </ul>
-<h3 id="搬砖小技巧"><a href="#搬砖小技巧" class="headerlink" title="搬砖小技巧"></a>搬砖小技巧</h3><ul>
-<li>Excel 好用！</li>
-<li>记录常用的queries，然后快乐copy&#x2F;paste~</li>
-<li>重复的工作想办法自动化；如果不能避免，偶尔拧拧螺丝摸摸鱼也挺快乐</li>
+<h3 id="Moving-tips"><a href="#Moving-tips" class="headerlink" title="Moving tips"></a>Moving tips</h3><ul>
+<li>Excel good to use!</li>
+<li>record commonly used queries, then happy copy&#x2F;paste~</li>
+<li>Repetitive work to find ways to automate; if you can not avoid, occasionally screwing and touching the fish is also quite happy</li>
 </ul>
-<h2 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h2><p>一个矛盾的地方：我想象中的规范的流程，必然会使效率降低，也必然会让每个人更拧螺丝以及更可替换？会因为流程更复杂而使改变变得更艰难，自由度也可能下降？</p>
-<p>如果要做得更好需要更多得发掘业务的需求以及了解业务流程，应该怎么做呢？<br>    - 发掘数分的需求：<br>        * 直接询问收集意见？但没有具体的目的，很难问？<br>        * 查看现有的报表关注的指标<br>        * 一些common senses？自己想想？<br>    - 了解业务流程：<br>        * 直接问个大概（我觉得还是有个文档会比口口相传好，没有的情况就自己整理一个吧）<br>        * 通过看现有的数据了解<br>        * 在做各个需求的时候</p>
-<p>凌晨巡检是很难受，也算是离职的原因之一，但也并不是因为我是女生，希望不要因此在工作中边缘化女性。不过话说回来，如何降低频率呢？公司应该设立什么样的制度呢？跨部门间的协作应该怎么促进呢？</p>
-<p>最让我觉得有趣的总是发现问题，思考解决方案，并最终解决问题的过程。我为我能解决一些有“意义”的问题而感到快乐。这份工作或许不是快乐的根源而是媒介。我觉得我也可以再试试看别的方向？看看是开发更有趣还是Data更有趣。</p>
-<p>如果要自动化的话，有可能自适应业务数据库的改动吗？或者说怎么更好得设计数据处理的pipeline呢？又要怎么聚合指标呢？哪些指标是通用的，数据又有哪些用呢？</p>
+<h2 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h2><p>A contradiction: I imagine that the standardized process will inevitably make less efficient, but also inevitably make each person more screwed as well as more replaceable? Will the process be more complex and make change more difficult, and freedom may be reduced?</p>
+<p>If you want to do better, you need to find out more about the needs of the business and understand the business process, how should you do it?<br>    - To uncover the need for a number of points.<br>        * Ask directly to collect opinions? But it is difficult to ask without a specific purpose?<br>        * Check the existing reports for metrics of interest.<br>        * Thinking of some common senses?<br>    - Understand the business process.<br>        * Ask a direct general (I think it would be better to have a document than word of mouth, and if you don’t have one, put one together yourself)<br>        * understand by looking at the existing data<br>        * in doing the various requirements</p>
+<p>If the data is to be automated, is it possible to adapt to changes in the business database? Or how to better design the data processing pipeline? And how to aggregate metrics? Which metrics are common, and what are the uses of the data?</p>
+<p>What I find most interesting is always the process of identifying problems, thinking about solutions, and finally solving them. I am happy that I can solve problems and I am happy that I can help others. This job may not be the source of happiness but the medium. I need a meaningful job. I guess switching another company and trying different stuff may be more interesting.</p>
 
             </div>
             <hr>
